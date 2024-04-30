@@ -1,0 +1,538 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Home Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- Bootstrap CSS v5.2.1 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+    <style type="text/css" media="screen and (max-width: 575px)">
+        #nav_form_prof_res {
+            /* display: none; */
+            display: hidden;
+        }
+    </style>
+    <style>
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1;
+        }
+
+        .hero {
+            background-image: url('https://images.unsplash.com/photo-1505063399498-45e53dcc0b60?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-attachment: fixed;
+            min-height: 80vh;
+        }
+
+        #container {
+            max-width: 1224px;
+            width: 50%;
+            margin: auto;
+            /* padding: 40px 0; */
+            padding-top: 30px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+
+        }
+
+        .photo-gallery {
+            display: flex;
+            gap: 20px;
+        }
+
+        .column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .column0 {
+            display: flex;
+            gap: 20px;
+        }
+
+        .photo img {
+            width: 100%;
+            height: 100%;
+            /* border-radius: 5px; */
+            object-fit: cover;
+        }
+
+        .bottom-right {
+            position: absolute;
+            bottom: 8px;
+            right: 16px;
+            color: white;
+        }
+
+        .bottom-left {
+            position: absolute;
+            bottom: 8px;
+            left: 16px;
+            color: white;
+        }
+
+        .top-left {
+            position: absolute;
+            top: 8px;
+            left: 16px;
+            color: white;
+        }
+
+        .masonry_p {
+            font-size: smaller;
+        }
+
+        .slider-container {
+            width: 100%;
+            height: 85vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(to right, rgb(255, 65, 108), rgba(255, 75, 43));
+        }
+
+        .image-slider {
+            width: 100%;
+            height: 600px;
+            position: absolute;
+            left: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: .7s;
+        }
+
+        .slides-div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 30px 0 30px;
+        }
+
+        .img {
+            position: relative;
+            width: 240px;
+            height: 370;
+            transition: .5s;
+            filter: saturate(10%);
+        }
+
+        .button {
+            position: absolute;
+            width: 240px;
+            height: 370px;
+            transition: .5s;
+            background-color: rgba(0, 0, 0, .4);
+        }
+
+        .button:hover {
+            background-color: rgba(0, 0, 0, .2);
+        }
+
+
+        #oval_img {
+            border-radius: 44% 56% 57% 43% / 64% 58% 42% 36%;
+        }
+
+        .parent {
+            position: relative;
+            top: 0;
+            left: 0;
+        }
+
+        .banner {
+            background-color: #343A40;
+        }
+
+        .image1 {
+            position: relative;
+            top: 0;
+            left: 0;
+            border: 1px solid white;
+            width: 22vw;
+        }
+
+        .image2 {
+            position: absolute;
+            top: 110px;
+            left: 100px;
+            border: 1px solid white;
+            width: 8vw;
+        }
+
+        .carousel_div {
+            background-color: rgba(192, 192, 192, 0.192);
+        }
+
+        .mobile_div {
+            background-color: #fefae053;
+        }
+        #container{
+            position: absolute;
+        }
+        #masonry_div{
+            min-height: 100vh;
+        }
+    </style>
+    <style type="text/css" media="screen and (max-width: 480px)">
+        .photo-gallery {
+            flex-direction: column;
+        }
+    </style>
+    <style type="text/css" media="screen and (max-width: 992px)">
+        #container {
+            width: 90%;
+            position: static;
+        }
+        #masonry_div{
+            min-height: 0vh;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="d-flex justify-content-between py-1 flex-wrap mx-3">
+            <div class="py-1">
+                <a class="text-decoration-none text-white px-1 px-md-3 banner_a" href="">666 888 0000</a>
+                <a class="text-decoration-none text-white px-1 px-md-3 banner_a" href="">hindukushholidays@gmail.com</a>
+            </div>
+            <div class="py-1">
+                <div class="d-inline">
+                    <i class="text-white px-1 fa-brands fa-facebook-f"></i>
+                    <i class="text-white px-1 fa-brands fa-instagram"></i>
+                    <i class="text-white px-1 fa-brands fa-twitter"></i>
+                </div>
+                <a class="btn btn-sm btn-success mx-4" href="/">Create Package</a>
+            </div>
+        </div>
+    </div>
+    <header class='bg-white'>
+        <div class="container">
+            <nav class="navbar navbar-expand-sm navbar-light bg-white">
+                <a class="navbar-brand" href="#">
+                    <img class="img-fluid" src="./assets/images/No Background_ Hindukush Holidays Logo.png" alt="logo"
+                        width="80vw">
+                </a>
+                <button class="navbar-toggler d-lg-none border-0" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="collapsibleNavId">
+                    <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#" aria-current="page">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Events</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Activities</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Gallery</a>
+                        </li>
+                    </ul>
+                    <form class="d-flex my-2 my-lg-0">
+                        <button class="border-0 bg-transparent" type="search">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </button>
+                    </form>
+                    <button class="border-0 bg-transparent">
+                        <img src="./assets/images/man_avatar.png" alt="avatar" width="40vw">
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+    </header>
+    <main class="">
+        <div class="hero container-fluid d-flex justify-content-center align-items-center text-white">
+            <div class="text-center">
+                <div class="text-white text-center">
+                    <div class="animate__animated animate__heartBeat text-center">
+                        <h1 class="text-white">Lets Travel!</h1>
+                        <h2 class="text-white">Ride Through the Hindukush</h2>
+                        <button class="btn btn-secondary my-md-3">Book Now</button>
+                    </div>
+                </div>
+                <div class="text-center mt-5">
+                    <i class="fa-solid fa-arrow-right-long"></i>
+                    <span class="mt-auto fs-5">Browse our upcoming Events</span>
+                </div>
+            </div>
+        </div>
+        <!-- Masonry Layout -->
+        <div>
+            <div class="position-relative">
+                <div class="" id="masonry_div"></div>
+                <div class="container" id="container">
+                    <div class="photo-gallery justify-content-center">
+                        <div class="column">
+                            <div class="photo position-relative">
+                                <img src="https://images.unsplash.com/photo-1516739711484-6f80025660c6?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="">
+                                <div class="bottom-right text-end p-2 mb-2">
+                                    <h4>Technologies</h4>
+                                    <p class="ms-auto masonry_p">Lorem ipsum dolor sit amet consectetur adipisicing
+                                        elit.
+                                    </p>
+                                    <button class="btn btn-sm btn-primary">Read more</button>
+                                </div>
+                            </div>
+                            <div class="photo position-relative">
+                                <div class="column0">
+                                    <div class="photo">
+                                        <img src="https://images.unsplash.com/photo-1476979735039-2fdea9e9e407?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                            alt="">
+                                        <div class="bottom-left p-2 mb-2">
+                                            <h4>Thermo AW 2015</h4>
+                                            <p class="ms-auto masonry_p">Lorem ipsum dolor sit</p>
+                                            <button class="btn btn-sm btn-primary">Read more</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="photo position-relative">
+                                <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="">
+                                <div class="bottom-left p-2 mb-2">
+                                    <h4>Thermo AW 2015</h4>
+                                    <p class="ms-auto masonry_p">Lorem ipsum dolor sit</p>
+                                    <button class="btn btn-sm btn-primary">Read more</button>
+                                </div>
+                            </div>
+                            <div class="photo position-relative">
+                                <img src="https://images.unsplash.com/photo-1568454537842-d933259bb258?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                    alt="">
+                                <div class="top-left p-2 mb-2">
+                                    <h4>Active Outdoor</h4>
+                                    <p class="ms-auto masonry_p">Lorem ipsum dolor sit ipsum dolor sit</p>
+                                    <button class="btn btn-sm btn-primary">Read more</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-black min-vh-50"></div>
+            </div>
+            <!-- Slider & Cards -->
+            <div class="bg-black text-center text-white py-5">
+                <p class="mt-5 pt-4"></p>
+                <h2 class="mt-5 pt-5">Featured</h2>
+                <h3 class="my-3">Most Popular Activities</h3>
+
+                <div class="container py-5 my-5">
+                    <div class="row container py-5">
+                        <div class="col-12 col-md-6 px-3 py-4 parent">
+                            <img id="oval_img" class="img-fluid image1" src="./assets/images/hero_img.jpg" alt="">
+                            <img id="oval_img" class="img-fluid image2 d-none d-md-inline-block"
+                                src="./assets/images/hero_img.jpg" alt="">
+                        </div>
+                        <div class="col-12 col-md-6 px-3 py-4 text-center">
+                            <h3>Tour with us</h3>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati iste laboriosam,
+                                blanditiis totam quae laborum numquam dolorum repellendus eos neque aperiam possimus
+                                omnis
+                                pariatur maiores cumque veritatis, rem sed consequatur!</p>
+                            <button class="btn btn-success">Search</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container mb-5">
+                    <div class="row my-2">
+                        <div class="col-12 col-md-4 my-2 my-md-0">
+                            <img class="img-fluid"
+                                src="https://images.unsplash.com/photo-1558030089-02acba3c214e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                        </div>
+                        <div class="col-12 col-md-4 my-2 my-md-0 d-flex flex-column justify-content-around">
+                            <div>
+                                <hr style="width: 2vw; margin: auto;">
+                            </div>
+                            <div class="mb-4">
+                                <p class="px-0 mx-0">Lorem, ipsum dolor sit amet consectetur ipsum dolor sit amet
+                                    consectetur ipsum dolor sit amet consectetur</p>
+                                <button class="btn btn-transparent btn-outline-warning">Click Here</button>
+                            </div>
+                        </div>
+                        <div class="col-12 col-md-4 my-2 my-md-0">
+                            <img class="img-fluid"
+                                src="https://images.unsplash.com/photo-1558030006-450675393462?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                        </div>
+                    </div>
+                    <div class="row my-2">
+                        <div class="col-12 col-md-4 my-2 my-md-0">
+                            <img class="img-fluid"
+                                src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                        </div>
+                        <div class="col-12 col-md-4 my-2 my-md-0">
+                            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="" class="img-fluid">
+                        </div>
+                        <div class="col-12 col-md-4 my-2 my-md-0">
+                            <img src="https://images.unsplash.com/photo-1447078806655-40579c2520d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="" class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container my-5 pt-5">
+                    <div class="row mt-5">
+                        <div class="col-12 col-md-6 text-start px-5">
+                            <p class="">Lorem ipsum dolor sit amet consectetur.</p>
+                            <h2 class="my-3">Royal Custodians Of Mountains Range</h2>
+                            <p class="mb-4 mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam dolorem
+                                obcaecati error sed voluptatum, quia ea debitis autem, nisi sunt perferendis. Enim ad
+                                totam
+                                debitis aliquam? Quia, eum laborum. Deleniti!</p>
+
+                            <iframe class="mt-5 img-fluid" width="460" height="215"
+                                src="https://www.youtube.com/embed/nZmO8B9rRik?si=VxcnWdp4e_9NtsGh"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                        </div>
+                        <div class="col-12 col-md-6 px-5">
+                            <img style="object-fit: contain;" class="img-fluid"
+                                src="https://plus.unsplash.com/premium_photo-1675302920929-6387f53e9742?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="carousel_div mb-4 mt-5">
+
+            <div class="container mt-4 py-5">
+                <div id="carouselExampleIndicators" class="carousel slide">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                            class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                            aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                            aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="py-4 text-center mb-5">
+                                <p>Our Testimonials</p>
+                                <h4>What They Say</h4>
+                                <img src="./assets/images/man_avatar.png" style="width: 10vw;" class="my-5 img-fluid"
+                                    alt="...">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eaque adipisci
+                                    recusandae est
+                                    impedit. Doloremque fuga, ullam odit cumque nemo vitae voluptate dolorem distinctio
+                                    consequuntur
+                                    alias accusantium quos optio nobis.</p>
+                                <i>John Doe</i>
+                                <p>CEO</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="py-4 text-center mb-5">
+                                <p>Our Testimonials</p>
+                                <h4>What They Say</h4>
+                                <img src="./assets/images/man_avatar.png" style="width: 10vw;" class="my-5 img-fluid"
+                                    alt="...">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eaque adipisci
+                                    recusandae est
+                                    impedit. Doloremque fuga, ullam odit cumque nemo vitae voluptate dolorem distinctio
+                                    consequuntur
+                                    alias accusantium quos optio nobis.</p>
+                                <i>Donald Trump</i>
+                                <p>CEO</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="py-4 text-center mb-5">
+                                <p>Our Testimonials</p>
+                                <h4>What They Say</h4>
+                                <img src="./assets/images/man_avatar.png" style="width: 10vw;" class="my-5 img-fluid"
+                                    alt="...">
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eaque adipisci
+                                    recusandae est
+                                    impedit. Doloremque fuga, ullam odit cumque nemo vitae voluptate dolorem distinctio
+                                    consequuntur
+                                    alias accusantium quos optio nobis.</p>
+                                <i>John F. Kennedy</i>
+                                <p>CEO</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="mobile_div py-5">
+                <div class="container py-5">
+                    <div class="container">
+                        <div class="row container text-center">
+                            <div class="col-12 col-md-6 text-start">
+                                <p class="text-capitalize">Join Hindukush Holidays</p>
+                                <h4>Not a Memebr Yet?</h4>
+                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex quibusdam eum asperiores.
+                                </p>
+                                <div class="my-5">
+                                    <button class="btn btn-success">Login</button>
+                                    <button class="btn btn-light">Register</button>
+                                </div>
+                            </div>
+                            <div class="col-12 col-md-6">
+                                <img class="img-fluid w-25" src="./assets/images/mobile.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <!-- place footer here -->
+    </footer>
+    <!-- Bootstrap JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+        integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+        crossorigin="anonymous"></script>
+
+    <!-- Font Aweosme -->
+    <script src="https://kit.fontawesome.com/79a8ade1e9.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
